@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Введіть розмірність матриць: ");
+    scanf("%d", &n);
+
+    int A[n][n];
+    int B[n][n];
+
+    printf("Введіть матрицю A:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &A[i][j]);
+        }
+    }
+
+    printf("Введіть матрицю B:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &B[i][j]);
+        }
+    }
+
+    printf("Матриця A:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d ", A[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\nМатриця B:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d ", B[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\nМатриця A замінена на парні стовпці з матриці B:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (j % 2 == 0) {
+                printf("%d ", B[i][j]);
+            } else {
+                printf("%d ", A[i][j]);
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
